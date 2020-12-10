@@ -1,0 +1,576 @@
+/* Global Styles */
+.HKGothic-Black {
+    font-family: 'HKGothic-Black', sans-serif;
+    font-weight: 800;
+}
+.HKGothic-Bold {
+    font-family: 'HKGothic-Bold', sans-serif;
+    font-weight: bold;
+}
+.HKGothic-Medium {
+    font-family: 'HKGothic-Medium', sans-serif;
+    font-weight: 500;
+}
+html, body {
+    max-width: 1440px;
+    overflow-x: hidden;
+    margin: 0 auto !important;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+    margin: 0;
+}
+h1, .h1 {
+    @extend .HKGothic-Black;
+    line-height: 1.27;
+    margin: 0 0 20px;
+    font-size: 22px;
+    @include breakpoint (400px) {font-size: 28px;}
+    @include breakpoint (550px) {font-size: 38px;}
+    @include breakpoint (800px) {font-size: 54px;}
+    @include breakpoint (large) {font-size: 74px;}
+    @include breakpoint (1200px) {font-size: 94px;}
+}
+h2, .h2 {
+    @extend .HKGothic-Black;
+    line-height: 1.48;
+    margin: 0 0 20px;
+    font-size: 22px;
+    @include breakpoint (550px) {font-size: 28px;}
+    @include breakpoint (medium) {font-size: 36px;}
+    @include breakpoint (large) {font-size: 44px;}
+    @include breakpoint (1200px) {font-size: 54px;}
+}
+h3, .h3 {
+    @extend .HKGothic-Black;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    font-size: 22px;
+    @include breakpoint (medium) {font-size: 26px;}
+    @include breakpoint (large) {font-size: 30px;}
+}
+h4, .h4 {
+    @extend .HKGothic-Bold;
+    line-height: 1.4;
+    font-size: 20px;
+    @include breakpoint (medium) {font-size: 26px;}
+    @include breakpoint (large) {font-size: 30px;}
+}
+h5, .h5 {
+    @extend .HKGothic-Black;
+    line-height: 1.5;
+    font-size: 10px;
+    @include breakpoint (550px) {font-size: 13px;}
+    @include breakpoint (medium) {font-size: 16px;}
+}
+p, .p {
+    @extend .HKGothic-Medium;
+    line-height: 1.4;
+}
+/* !Global Styles */
+
+/* Intro Section */
+section.intro {
+    padding: 35px 0 25px;
+    @include breakpoint (medium) {padding: 55px 0 40px;}
+    @include breakpoint (large) {padding: 75px 0 60px;}
+    .logo {
+        text-align: center;
+        padding-bottom: 4px;
+        img {
+            max-width: 37px;
+            @include breakpoint (medium) {max-width: 42px;}
+        }
+    }
+    .title {
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        max-width: 1024px;
+        padding: 0 24px;
+        @include breakpoint (medium) {
+            padding: 0 50px;
+        }
+        @include breakpoint (800px) {
+            padding: 0 50px;
+        }
+        h1 {
+            position: relative;
+            display: inline-block;
+            bottom: -36px;
+            @include breakpoint (450px) {
+                bottom: -42px;
+            }
+            @include breakpoint (550px) {
+                bottom: -50px;
+            }
+            @include breakpoint (800px) {
+                bottom: -63px;
+            }
+            @include breakpoint (large) {
+                bottom: -73px;
+            }
+            @include breakpoint (1200px) {
+                bottom: -93px;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                background-image: url('/assets/images/grafikr_circle.svg');
+                animation: circle-spin 20s linear infinite;
+                width: 90px;
+                height: 90px;
+                top: -43px;
+                left: -45px;
+                @include breakpoint (340px) {
+                    width: 100px;
+                    height: 100px;
+                    top: -48px;
+                    left: -50px;
+                }
+                @include breakpoint (450px) {
+                    width: 125px;
+                    height: 125px;
+                    top: -55px;
+                    left: -67px;
+                }
+                @include breakpoint (550px) {
+                    width: 150px;
+                    height: 150px;
+                    top: -60px;
+                    left: -72px;
+                }
+                @include breakpoint (800px) {
+                    width: 200px;
+                    height: 200px;
+                    top: -90px;
+                    left: -90px;
+                }
+                @include breakpoint (large) {
+                    width: 242px;
+                    height: 242px;
+                }
+                @include breakpoint (1200px) {
+                    width: 282px;
+                    height: 282px;
+                    top: -100px;
+                    left: -93px;
+                }
+            }
+        }
+    }
+    .image {
+        padding: 0;
+        @include breakpoint (450px) {
+            padding: 0 10px;
+        }
+        @include breakpoint (800px) {
+            padding: 0 34px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+/* !Intro Section */
+
+/* Tagline Section */
+section.tagline {
+    padding: 20px 0;
+    @include breakpoint (medium) {padding: 35px 0;}
+    @include breakpoint (large) {padding: 55px 0;}
+    .grid-x {
+        @include breakpoint (550px) {
+            flex-wrap: nowrap;
+        }
+        .cell:first-child {
+            order: 2;
+            @include breakpoint (550px) {order: 1;}
+        }
+        .cell:last-child {
+            order: 1;
+            @include breakpoint (550px) {order: 2;}
+        }
+    }
+    .image {
+        max-width: 720px;
+        img {
+            width: 100%;
+        }
+    }
+    .text {
+        max-width: 430px;
+        padding: 0 20px 15px;
+        text-align: center;
+        @include breakpoint (550px) {padding: 30px 0 20px; text-align: left;}
+        @include breakpoint (large) {padding: 50px 0 20px;}
+    }
+    .custom-size {
+        @include breakpoint (550px) {
+            max-width: 50%;
+        }
+        @include breakpoint (768px) {
+            max-width: 60%;
+        }
+    }
+}
+/* !Tagline Section*/
+
+/* Unique-Tagline Section */
+section.unique-tagline {
+    padding: 20px 0;
+    @include breakpoint (medium) {padding: 35px 0;}
+    @include breakpoint (large) {padding: 55px 0;}
+    .grid-container {
+        @include breakpoint (550px) {
+            padding-right: 0;
+        }
+    }
+    .grid-x {
+        @include breakpoint (550px) {
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+        @include breakpoint (1220px) {
+            margin-left: calc((100% - 1200px) / 2 - 10px) !important;
+        }
+    }
+    .cell:first-child {
+        @include breakpoint (550px) {
+            max-width: 330px;
+        }
+        @include breakpoint (768px) {
+            max-width: 430px;
+        }
+    }
+    .image {
+        img {
+            width: 100%;
+        }
+    }
+    .text {
+        padding: 0 20px 15px;
+        text-align: center;
+        @include breakpoint (550px) {
+            max-width: 430px;
+            padding: 50px 0 20px;
+            text-align: left;
+        }
+    }
+}
+/* !Unique-Tagline Section*/
+
+/* Jumbotron Section */
+section.jumbotron {
+    background-image: url('../assets/images/grafikr_client_soyaconcept.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 75px 0 45px;
+    margin: 25px 0;
+    position: relative;
+    @include breakpoint (550px) {
+        padding: 90px 0 80px;
+        margin: 30px 0;
+    }
+    @include breakpoint (medium) {
+        padding: 146px 0 126px;
+        margin: 60px 0 46px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.3);
+        background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+    }
+    .text {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        h3 {
+            @extend .HKGothic-Bold;
+            color: $white;
+            line-height: 1.2;
+            font-size: 32px;
+            @include breakpoint (medium) {font-size: 42px;}
+            @include breakpoint (large) {font-size: 78px;}
+            @include breakpoint (1200px) {font-size: 96px;}
+            @include breakpoint (1440px) {font-size: 112px;}
+        }
+    }
+}
+/* !Jumbotron Section */
+
+/* Brand-Slider Section */
+section.brand-slider {
+    text-align: center;
+    padding: 25px 0;
+    @include breakpoint (medium) {padding: 45px 0;}
+    @include breakpoint (large) {padding: 75px 0;}
+    .text {
+        margin: 0 auto;
+        padding-bottom: 8px;
+        @include breakpoint (medium) {padding-bottom: 15px;}
+        @include breakpoint (large) {padding-bottom: 30px;}
+    }
+    .brands {
+        &:hover {
+            .slick-arrow {
+                opacity: 1;
+            }
+        }
+        .slick-arrow {
+            position: absolute;
+            top: calc(50% - 15px);
+            transform: translateY(-50%);
+            z-index: 3;
+            opacity: 0;
+            color: $black;
+            background-color: #fff;
+            height: 40px;
+            width: 40px;
+            font-size: 16px;
+            line-height: 38px;
+            transition: all .3s;
+            cursor: pointer;
+            &:hover {
+                background-color: #c8c8c8;
+            }
+        }
+        .slick-prev {
+            left: 85px;
+            @include breakpoint (1340px) {
+                left: calc((100% - 1200px) / 2 + 20px);
+            }
+        }
+        .slick-next {
+            right: 85px;
+            @include breakpoint (1340px) {
+                right: calc((100% - 1200px) / 2 + 20px);
+            }
+        }
+        .slick-list {
+            margin: 0 auto;
+            overflow: visible;
+            max-width: 1210px;
+            @include breakpoint (medium) {
+                max-width: 1230px;
+            }
+        }
+        .slick-dots {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            width: calc(100% - 108px);
+            margin: 15px auto 0;
+            @include breakpoint (medium) {
+                margin: 30px auto 0;
+                width: calc(100% - 128px);
+            }
+            @include breakpoint (large) {margin: 50px auto 0;}
+            @include breakpoint (1340px) {
+                width: 100%;
+                max-width: 1200px;
+            }
+            li {
+                display: block;
+                width: 100%;
+                &.slick-active {
+                    button {
+                        background-color: $black !important;
+                    }
+                }
+                button {
+                    display: block;
+                    width: 100%;
+                    font-size: 0;
+                    border: 0;
+                    height: 3px;
+                    border-radius: 0;
+                    background-color: #C8C8C8;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all .3s;
+                    &:hover {
+                        background-color: darken(#C8C8C8, 18%);
+                    }
+                }
+            }
+        }
+        .item {
+            position: relative;
+            outline: none;
+            max-width: 1210px;
+            margin: 0 5px;
+            @include breakpoint (medium) {
+                max-width: 1230px;
+                margin: 0 15px;
+            }
+            &.light {
+                h5 {
+                    color: $black;
+                }
+            }
+            img {
+                width: 100%;
+            }
+            h5 {
+                position: absolute;
+                left: 0;
+                width: calc(100% - 20px);
+                color: $white;
+                display: inline-block;
+                padding: 0 10px;
+                bottom: 20px;
+                @include breakpoint (550px) {
+                    bottom: 32px;
+                }
+            }
+        }
+    }
+}
+body.is-touch section.brand-slider {
+    .slick-arrow {
+        display: none !important;
+    }
+}
+/* !Brand-Slider Section */
+
+/* Colleagues Section */
+section.colleagues {
+    text-align: center;
+    position: relative;
+    padding: 30px 0 75px;
+    @include breakpoint (medium) {padding: 50px 0 75px;}
+    @include breakpoint (large) {padding: 75px 0;}
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0 50px;
+        li {
+            @extend .HKGothic-Medium;
+            line-height: 1.23;
+            position: relative;
+            overflow: hidden;
+            font-size: 20px;
+            @include breakpoint (medium) {font-size: 26px;}
+            @include breakpoint (800px) {font-size: 32px;}
+            @include breakpoint (large) {font-size: 36px;}
+            @include breakpoint (1200px) {font-size: 42px;}
+            &.hover {
+                z-index: 5;
+                overflow: visible;
+                div {
+                    opacity: 1;
+                }
+                span {
+                    color: #fff;
+                    z-index: 3;
+                }
+            }
+            span {
+                display: block;
+                position: relative;
+                z-index: 3;
+                cursor: default;
+                padding: 8px 14px;
+                @include breakpoint (medium) {padding: 8px 16px;}
+                @include breakpoint (800px) {padding: 12px 20px;}
+                @include breakpoint (large) {padding: 16px 24px;}
+                @include breakpoint (1200px) {padding: 20px 30px;}
+            }
+            div {
+                opacity: 0;
+                position: absolute;
+                z-index: 2;
+                bottom: 0;
+                right: 50%;
+                transform: translateX(50%);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                width: 170px;
+                height: 170px;
+                @include breakpoint (medium) {
+                    width: 200px;
+                    height: 200px;
+                }
+                @include breakpoint (large) {
+                    width: 250px;
+                    height: 250px;
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $black;
+                    opacity: .3;
+                }
+            }
+        }
+    }
+    .mobile-controls {
+        position: absolute;
+        bottom: 0;
+        display: none;
+        right: 0;
+        left: 0;
+        &.active {
+            display: block;
+        }
+        padding-top: 15px;
+        h4 {
+            @extend .HKGothic-Medium;
+            margin: 8px 0 0;
+        }
+        button {
+            font-size: 32px;
+            border: 0;
+            background-color: transparent;
+            outline: none;
+            transform: rotate(45deg);
+            padding: 0;
+            position: relative;
+            bottom: 8px;
+        }
+    }
+}
+body:not(.is-touch) section.colleagues {
+    .mobile-controls {
+        display: none !important;
+    }
+    .dim-down {
+        span {
+            color: #C8C8C8;
+        }    
+    }
+}
+/* !Colleagues Section */
+
+/* Keyframes */
+@keyframes circle-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* !Keyframes */
